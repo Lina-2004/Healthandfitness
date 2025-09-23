@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Health and Fitness App"
+        android:textSize="24sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learn tips about health and fitness, track your progress, and stay motivated!"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btnGoAdvice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Health Advice"/>
+
+    <Button
+        android:id="@+id/btnGoProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fitness Progress"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>
