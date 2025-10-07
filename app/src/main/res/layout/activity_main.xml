@@ -3,33 +3,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:gravity="center_horizontal"
+    android:background="#E8F5E9">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Health and Fitness App"
-        android:textSize="24sp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="12dp"
+        android:text="Fitness and Health"
+        android:textColor="#1B5E20"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/intro"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Learn tips about health and fitness, track your progress, and stay motivated!"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="20dp"
+        android:text="Reste actif·ve, mange équilibré·e et suis tes progrès chaque jour.\nAtteignons tes objectifs ensemble !"
+        android:textAlignment="center"
+        android:textColor="#2E7D32"
+        android:textSize="18sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/btnGoAdvice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Health Advice"/>
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="#FF7043"
+        android:text="Programmes et conseils"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btnGoProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fitness Progress"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="#43A047"
+        android:text="Suivi d'exercice"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF" />
+
+
+    <Button
+        android:id="@+id/btnGoInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="#B19B57"
+        android:text="Saisir mes données"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="v1.0 • Fitness and Health"
+        android:textColor="#4CAF50"
+        android:textSize="12sp" />
+
 </LinearLayout>

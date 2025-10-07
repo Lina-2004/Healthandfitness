@@ -3,18 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="#FFF8E1">
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/titleHealthAdvice"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Health Advice"
-        android:textSize="24sp"
-        android:layout_marginBottom="20dp"/>
+        android:text="Programme et Conseils Santé"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="#4CAF50"
+    android:layout_marginBottom="20dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/healthTips"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="• Drink at least 8 glasses of water daily\n• Exercise 30 minutes every day\n• Eat more fruits and vegetables\n• Get enough sleep"
-        android:textSize="18sp"/>
+        android:text="• Buvez au moins 8 verres d’eau par jour\n\n• Faites 30 minutes d’exercice chaque jour\n\n• Mangez plus de fruits et légumes\n\n• Dormez suffisamment (7 à 9 heures)\n\n• Faites des pauses si vous êtes assis longtemps\n\n• Réduisez le sucre et les aliments transformés\n\n• Étirez-vous chaque matin\n\n• Tenez un journal pour suivre vos progrès"
+        android:textSize="18sp"
+        android:lineSpacingExtra="6dp"
+        android:textColor="#FF5722"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- Bouton retour -->
+    <Button
+        android:id="@+id/btnBackMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retour à l'accueil"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4CAF50"
+        android:textAllCaps="false"/>
 </LinearLayout>

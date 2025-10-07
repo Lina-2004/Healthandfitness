@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnGoAdvice, btnGoProgress;
+    private Button btnGoAdvice, btnGoProgress, btnGoInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnGoAdvice = findViewById(R.id.btnGoAdvice);
         btnGoProgress = findViewById(R.id.btnGoProgress);
+        btnGoInput = findViewById(R.id.btnGoInput);
 
         btnGoAdvice.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
@@ -26,6 +27,17 @@ public class MainActivity extends AppCompatActivity {
         btnGoProgress.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
             startActivity(intent);
+        });
+
+        btnGoInput.setOnClickListener(v -> {
+
+            try {
+                Intent intent = new Intent(MainActivity.this, Activity4.class);
+                startActivity(intent);
+                return;
+            } catch (Throwable ignored) { }
+
+
         });
     }
 }

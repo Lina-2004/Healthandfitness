@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_rel5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E8F5E9">
+
+    <TextView
+        android:id="@+id/tvHeader5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Détails utilisateur - Fitness"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#1B5E20"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:id="@+id/nested_display_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHeader5"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:elevation="4dp">
+
+    <TextView
+        android:id="@+id/labelNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom : "
+        android:textColor="#2E7D32" />
+
+    <TextView
+        android:id="@+id/tvNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelNameValue"
+        android:layout_alignBaseline="@id/labelNameValue"
+        android:layout_marginStart="8dp"
+        android:text="-"
+        android:textColor="#0D3B2E" />
+
+    <TextView
+        android:id="@+id/labelAgeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Âge :"
+        android:textColor="#2E7D32"
+        android:layout_below="@id/labelNameValue"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvAgeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelAgeValue"
+        android:layout_alignBaseline="@id/labelAgeValue"
+        android:layout_marginStart="8dp"
+        android:text="-"
+        android:textColor="#0D3B2E" />
+
+    <TextView
+        android:id="@+id/labelWeightValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Poids (kg) :"
+        android:textColor="#2E7D32"
+        android:layout_below="@id/labelAgeValue"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvWeightValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelWeightValue"
+        android:layout_alignBaseline="@id/labelWeightValue"
+        android:layout_marginStart="8dp"
+        android:text="-"
+        android:textColor="#0D3B2E" />
+
+    <TextView
+        android:id="@+id/labelHeightValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taille (cm) :"
+        android:textColor="#2E7D32"
+        android:layout_below="@id/labelWeightValue"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvHeightValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelHeightValue"
+        android:layout_alignBaseline="@id/labelHeightValue"
+        android:layout_marginStart="8dp"
+        android:text="-"
+        android:textColor="#0D3B2E" />
+
+    <TextView
+        android:id="@+id/labelBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IMC :"
+        android:textColor="#2E7D32"
+        android:layout_below="@id/labelHeightValue"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvBMIValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelBMI"
+        android:layout_alignBaseline="@id/labelBMI"
+        android:layout_marginStart="8dp"
+        android:text="-"
+        android:textColor="#0D3B2E"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRecommendation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelBMI"
+        android:layout_marginTop="16dp"
+        android:text="Recommandation : -"
+        android:textStyle="italic"
+        android:textColor="#33691E" />
+
+
+    <Button
+        android:id="@+id/btnClose5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fermer"
+        android:textAllCaps="false"
+        android:layout_below="@id/tvRecommendation"
+        android:layout_marginTop="18dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#43A047"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>
+
+    </RelativeLayout>

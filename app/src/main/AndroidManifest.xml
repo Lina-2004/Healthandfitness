@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyApp" >
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
+        <activity android:name=".Activity4" />
+        <activity android:name=".Activity5" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" >

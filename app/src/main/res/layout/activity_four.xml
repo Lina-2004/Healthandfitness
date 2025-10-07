@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_rel4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E8F5E9">
+
+    <TextView
+        android:id="@+id/tvHeader4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saisie des données - Fitness"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#1B5E20"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:id="@+id/nested_form_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHeader4"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:elevation="4dp">
+
+    <TextView
+        android:id="@+id/labelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom :"
+        android:textColor="#2E7D32" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelName"
+        android:layout_alignBaseline="@id/labelName"
+        android:layout_marginStart="8dp"
+        android:hint="ex : Lina"
+        android:background="@android:drawable/edit_text"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/labelAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Âge :"
+        android:textColor="#2E7D32"
+        android:layout_below="@id/labelName"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelAge"
+        android:layout_alignBaseline="@id/labelAge"
+        android:layout_marginStart="8dp"
+        android:inputType="number"
+        android:hint="ex : 25"
+        android:background="@android:drawable/edit_text"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/labelWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Poids (kg) :"
+        android:textColor="#2E7D32"
+        android:layout_below="@id/labelAge"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelWeight"
+        android:layout_alignBaseline="@id/labelWeight"
+        android:layout_marginStart="8dp"
+        android:inputType="numberDecimal"
+        android:hint="ex : 68.5"
+        android:background="@android:drawable/edit_text"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/labelHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taille (cm) :"
+        android:textColor="#2E7D32"
+        android:layout_below="@id/labelWeight"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/etHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelHeight"
+        android:layout_alignBaseline="@id/labelHeight"
+        android:layout_marginStart="8dp"
+        android:inputType="number"
+        android:hint="ex : 170"
+        android:background="@android:drawable/edit_text"
+        android:padding="8dp" />
+
+
+    <Button
+        android:id="@+id/btnSendTo5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Envoyer vers Détails"
+        android:textAllCaps="false"
+        android:layout_below="@id/labelHeight"
+        android:layout_marginTop="18dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#43A047"
+        android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnBackMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retour à l'accueil"
+            android:textAllCaps="false"
+            android:layout_below="@id/btnSendTo5"
+            android:layout_marginTop="12dp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+</RelativeLayout>
+
+    </RelativeLayout>
