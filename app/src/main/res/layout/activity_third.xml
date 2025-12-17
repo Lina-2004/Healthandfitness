@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF8E1"
-    android:padding="20dp">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#E8F5E9">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- TITRE -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="Exercice Respiration"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        android:textColor="#1B4D3E"
+        android:layout_marginBottom="70dp" />
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Objectif Fitness du jour"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:layout_marginBottom="20dp"
-            android:textColor="#4CAF50"/>
+    <!-- CERCLE ANIMÉ -->
+    <View
+        android:id="@+id/breathCircle"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/circle_shape"
+        android:elevation="10dp"
+        android:layout_marginBottom="55dp" />
 
-        <EditText
-            android:id="@+id/etSteps"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre de pas prévus"
-            android:inputType="number"
-            android:layout_marginBottom="10dp"/>
+    <!-- TEXTE INSPIRE / EXPIRE -->
+    <TextView
+        android:id="@+id/tvInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prêt ?"
+        android:textSize="24sp"
+        android:textColor="#1B4D3E"
+        android:layout_marginBottom="40dp" />
 
-        <EditText
-            android:id="@+id/etTrainingTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Temps prévu (min)"
-            android:inputType="number"
-            android:layout_marginBottom="20dp"/>
+    <!-- PROGRESS BAR -->
+    <ProgressBar
+        android:id="@+id/progressBreathing"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="260dp"
+        android:layout_height="12dp"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="#2D9C89"
+        android:progressBackgroundTint="#C7E7DF"
+        android:scaleY="2"
+        android:clipToPadding="true"
+        android:layout_marginBottom="60dp" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="0"
-            android:progressTint="#FF5722"/>
-
-        <TextView
-            android:id="@+id/tvProgress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temps restant : 0s"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
-            android:textColor="#555555"/>
-
-        <Button
-            android:id="@+id/btnDone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="J’ai terminé"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
-            android:textAllCaps="false"/>
-    </LinearLayout>
-</ScrollView>
+    <!-- BOUTON -->
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2D9C89"
+        android:padding="14dp"
+        android:text="J’ai terminé"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:letterSpacing="0.03"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

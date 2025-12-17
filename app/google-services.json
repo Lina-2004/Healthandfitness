@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "488099533908",
+    "project_id": "myappsante",
+    "storage_bucket": "myappsante.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488099533908:android:b399ee99e7478171d189c1",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhF84BiUhjjtzYo7woFi6PK_grjtvWqTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

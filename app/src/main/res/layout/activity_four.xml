@@ -6,134 +6,165 @@
     android:padding="16dp"
     android:background="#E8F5E9">
 
+    <!-- Titre -->
     <TextView
         android:id="@+id/tvHeader4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Saisie des données - Fitness"
-        android:textSize="20sp"
+        android:text="Saisie des données - Évaluation IMC"
+        android:textAlignment="center"
+        android:textColor="#816F36"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="#1B5E20"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="12dp" />
 
+    <!-- Carte formulaire -->
     <RelativeLayout
         android:id="@+id/nested_form_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvHeader4"
-        android:layout_marginTop="16dp"
-        android:padding="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="8dp"
         android:background="#FFFFFF"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:elevation="4dp">
+        android:elevation="6dp"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/labelName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nom :"
-        android:textColor="#2E7D32" />
-
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/labelName"
-        android:layout_alignBaseline="@id/labelName"
-        android:layout_marginStart="8dp"
-        android:hint="ex : Lina"
-        android:background="@android:drawable/edit_text"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/labelAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Âge :"
-        android:textColor="#2E7D32"
-        android:layout_below="@id/labelName"
-        android:layout_marginTop="12dp" />
-
-    <EditText
-        android:id="@+id/etAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/labelAge"
-        android:layout_alignBaseline="@id/labelAge"
-        android:layout_marginStart="8dp"
-        android:inputType="number"
-        android:hint="ex : 25"
-        android:background="@android:drawable/edit_text"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/labelWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Poids (kg) :"
-        android:textColor="#2E7D32"
-        android:layout_below="@id/labelAge"
-        android:layout_marginTop="12dp" />
-
-    <EditText
-        android:id="@+id/etWeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/labelWeight"
-        android:layout_alignBaseline="@id/labelWeight"
-        android:layout_marginStart="8dp"
-        android:inputType="numberDecimal"
-        android:hint="ex : 68.5"
-        android:background="@android:drawable/edit_text"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/labelHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Taille (cm) :"
-        android:textColor="#2E7D32"
-        android:layout_below="@id/labelWeight"
-        android:layout_marginTop="12dp" />
-
-    <EditText
-        android:id="@+id/etHeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/labelHeight"
-        android:layout_alignBaseline="@id/labelHeight"
-        android:layout_marginStart="8dp"
-        android:inputType="number"
-        android:hint="ex : 170"
-        android:background="@android:drawable/edit_text"
-        android:padding="8dp" />
-
-
-    <Button
-        android:id="@+id/btnSendTo5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Envoyer vers Détails"
-        android:textAllCaps="false"
-        android:layout_below="@id/labelHeight"
-        android:layout_marginTop="18dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#43A047"
-        android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnBackMain"
+        <!-- Nom -->
+        <TextView
+            android:id="@+id/labelName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Retour à l'accueil"
-            android:textAllCaps="false"
-            android:layout_below="@id/btnSendTo5"
-            android:layout_marginTop="12dp"
+            android:text="Nom"
+            android:textColor="#2E7D32"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelName"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="Ex : Lina"
+            android:padding="14dp"
+            android:textColor="#1B5E20"
+            android:textColorHint="#9E9E9E"
+            android:textSize="16sp" />
+
+        <!-- Âge -->
+        <TextView
+            android:id="@+id/labelAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etName"
+            android:layout_marginTop="16dp"
+            android:text="Âge"
+            android:textColor="#2E7D32"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelAge"
+            android:layout_marginTop="6dp"
+            android:inputType="number"
+            android:background="@drawable/bg_edittext"
+            android:hint="Ex : 25"
+            android:padding="14dp"
+            android:textColor="#1B5E20"
+            android:textColorHint="#9E9E9E"
+            android:textSize="16sp" />
+
+        <!-- Poids -->
+        <TextView
+            android:id="@+id/labelWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etAge"
+            android:layout_marginTop="16dp"
+            android:text="Poids (kg)"
+            android:textColor="#2E7D32"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelWeight"
+            android:layout_marginTop="6dp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/bg_edittext"
+            android:hint="Ex : 68.5"
+            android:padding="14dp"
+            android:textColor="#1B5E20"
+            android:textColorHint="#9E9E9E"
+            android:textSize="16sp" />
+
+        <!-- Taille -->
+        <TextView
+            android:id="@+id/labelHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etWeight"
+            android:layout_marginTop="16dp"
+            android:text="Taille (cm)"
+            android:textColor="#2E7D32"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelHeight"
+            android:layout_marginTop="6dp"
+            android:inputType="number"
+            android:background="@drawable/bg_edittext"
+            android:hint="Ex : 170"
+            android:padding="14dp"
+            android:textColor="#1B5E20"
+            android:textColorHint="#9E9E9E"
+            android:textSize="16sp" />
+
+        <!-- Bouton envoyer -->
+        <Button
+            android:id="@+id/btnSendTo5"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etHeight"
             android:layout_centerHorizontal="true"
-            android:backgroundTint="#4CAF50"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_button_round"
+            android:text="📤 Envoyer vers Détails"
+            android:textAllCaps="false"
             android:textColor="#FFFFFF" />
-</RelativeLayout>
+
+        <!-- Bouton retour -->
+        <Button
+            android:id="@+id/btnBackMain"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnSendTo5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_button_round"
+            android:text="🏠 Retour à l'accueil"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+        <!-- Résultat -->
+        <TextView
+            android:id="@+id/lblResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnBackMain"
+            android:layout_marginTop="18dp"
+            android:textColor="#1B5E20"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:gravity="center" />
 
     </RelativeLayout>
+
+</RelativeLayout>

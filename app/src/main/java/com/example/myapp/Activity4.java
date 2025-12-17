@@ -11,17 +11,12 @@ import android.widget.Toast;
 
 public class Activity4 extends Activity {
 
-
-    public static final String KEY_NAME = "KEY_NAME";
-    public static final String KEY_AGE = "KEY_AGE";
-    public static final String KEY_WEIGHT = "KEY_WEIGHT";
-    public static final String KEY_HEIGHT = "KEY_HEIGHT";
-
-    private static final int REQ_CODE_DETAILS = 2001;
+    private static final int REQ_CODE_DETAILS = 101;
 
     EditText etName, etAge, etWeight, etHeight;
     Button btnSend, btnBackMain;
     TextView tvResultFrom5;
+    TextView lblResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,42 +29,34 @@ public class Activity4 extends Activity {
         etHeight = findViewById(R.id.etHeight);
         btnSend = findViewById(R.id.btnSendTo5);
         btnBackMain = findViewById(R.id.btnBackMain);
+        lblResult = (TextView) findViewById(R.id.lblResult);
 
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                // obtenir des valeurs de l'interface utilisateur
                 String name = etName.getText().toString().trim();
-                String sAge = etAge.getText().toString().trim();
-                String sWeight = etWeight.getText().toString().trim();
-                String sHeight = etHeight.getText().toString().trim();
+                int age = Integer.parseInt(etAge.getText().toString().trim());
+                Float weight = Float.parseFloat(etWeight.getText().toString().trim());
+                int height = Integer.parseInt(etHeight.getText().toString().trim());
 
-                if (name.isEmpty() || sAge.isEmpty() || sWeight.isEmpty() || sHeight.isEmpty()) {
-                    Toast.makeText(Activity4.this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
-                int age;
-                float weight;
-                int height;
-                try {
-                    age = Integer.parseInt(sAge);
-                    weight = Float.parseFloat(sWeight);
-                    height = Integer.parseInt(sHeight);
-                } catch (NumberFormatException e) {
-                    Toast.makeText(Activity4.this, "Vérifiez les formats numériques (âge, poids, taille)", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                // Préparer l'intent pour Activity5
+                // créer intent pour appeler Activity5
                 Intent intent = new Intent(Activity4.this, Activity5.class);
-                intent.putExtra(KEY_NAME, name);
-                intent.putExtra(KEY_AGE, age);
-                intent.putExtra(KEY_WEIGHT, weight);
-                intent.putExtra(KEY_HEIGHT, height);
-                intent.putExtra("KEY_TIMESTAMP", System.currentTimeMillis());
 
+                // créer un conteneur pour envoyer des données
+                Bundle myData = new Bundle();
+
+                // ajouter des éléments données <key,value> au conteneur
+                myData.putString("val1",name);
+                myData.putInt("val2",age);
+                myData.putFloat("val3",weight);
+                myData.putInt("val4",height);
+
+                // attacher le conteneur à l'intent
+                intent.putExtras(myData);
                 //lance Activity5 et attend un résultat
                 startActivityForResult(intent, REQ_CODE_DETAILS);
             }
@@ -83,36 +70,25 @@ public class Activity4 extends Activity {
         });
     }
 
-    // callback appelé quand Activity5 renvoie un résultat (setResult...)
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        // vérifier que c'est bien ma requête
         if (requestCode == REQ_CODE_DETAILS) {
-            if (resultCode == RESULT_OK && data != null) {
+            if (resultCode == Activity.RESULT_OK && data != null) {
+                float result = data.getFloatExtra("result", Float.MIN_VALUE);
+                if (result != Float.MIN_VALUE) {
+                    lblResult.setText("IMC = " + result);
 
-                // extra qui contient le message/valeur retournée
-                String retourMsg = data.getStringExtra("KEY_RETURN_MSG");
-                float returnedBmi = data.getFloatExtra("RESULT_BMI", -1f);
-
-                // afficher ou traiter le résultat
-                if (tvResultFrom5 != null) {
-                    String show = (retourMsg != null ? retourMsg : "Résultat reçu");
-                    if (returnedBmi > 0) show += " — IMC: " + returnedBmi;
-                    tvResultFrom5.setText(show);
                 } else {
-
-
-                    String toast = (retourMsg != null ? retourMsg : "Données reçues");
-                    if (returnedBmi > 0) toast += " (IMC: " + returnedBmi + ")";
-                    Toast.makeText(this, toast, Toast.LENGTH_LONG).show();
+                    lblResult.setText("IMC introuvable.");
                 }
-            } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, "Action annulée par l'utilisateur", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                lblResult.setText("Calcul annulé.");
             } else {
-                Toast.makeText(this, "Pas de résultat reçu", Toast.LENGTH_SHORT).show();
+                lblResult.setText("Aucun résultat reçu.");
             }
         }
     }
 }
+

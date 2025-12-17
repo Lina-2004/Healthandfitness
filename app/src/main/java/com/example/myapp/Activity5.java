@@ -7,15 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Activity5 extends Activity {
-
+public class Activity5 extends Activity implements View.OnClickListener {
     TextView tvName, tvAge, tvWeight, tvHeight, tvBMI, tvReco;
-    Button btnClose; //permet de fermer Activity5 et retourner un résultat
+    Button btnClose; // permet de fermer Activity5 et retourner un résultat
+
+    // champ pour garder l'IMC calculé et l'envoyer au clic
+    private float bmiToReturn = -1f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_five);//charge le layout activity_five.xml
+        setContentView(R.layout.activity_five); // charge le layout activity_five.xml
 
         tvName = findViewById(R.id.tvNameValue);
         tvAge = findViewById(R.id.tvAgeValue);
@@ -24,27 +26,31 @@ public class Activity5 extends Activity {
         tvBMI = findViewById(R.id.tvBMIValue);
         tvReco = findViewById(R.id.tvRecommendation);
         btnClose = findViewById(R.id.btnClose5);
+        btnClose.setOnClickListener(this);
 
-        Intent intent = getIntent();
-        if (intent == null) {
-            setResult(RESULT_CANCELED);
-            finish();
-            return;
+        // récupérer appel fait par Activity4 via Intent
+        Intent myLocalIntent = getIntent();
+        Bundle myBundle = myLocalIntent != null ? myLocalIntent.getExtras() : null;
+
+        String name = null;
+        int age = -1;
+        float weight = 0f;
+        int height = -1;
+
+        if (myBundle != null) {
+            name = myBundle.getString("val1");
+            age = myBundle.getInt("val2", -1);
+            weight = myBundle.getFloat("val3", 0f);
+            height = myBundle.getInt("val4", -1);
         }
-
-
-        String name = intent.getStringExtra("KEY_NAME");
-        int age = intent.getIntExtra("KEY_AGE", -1);
-        float weight = intent.getFloatExtra("KEY_WEIGHT", 0f);
-        int height = intent.getIntExtra("KEY_HEIGHT", 0);
 
         tvName.setText(name != null ? name : "(inconnu)");
         tvAge.setText(age >= 0 ? String.valueOf(age) : "-");
-        tvWeight.setText(String.valueOf(weight));
+        tvWeight.setText(weight > 0f ? String.valueOf(weight) : "-");
         tvHeight.setText(height > 0 ? String.valueOf(height) : "-");
 
         float roundedBmi = -1f;
-        if (height > 0) {
+        if (height > 0 && weight > 0f) {
             float hMeters = height / 100.0f;
             float bmi = weight / (hMeters * hMeters);
             roundedBmi = Math.round(bmi * 10f) / 10f;
@@ -63,24 +69,21 @@ public class Activity5 extends Activity {
             tvReco.setText(reco);
         } else {
             tvBMI.setText("-");
-            tvReco.setText("Taille invalide pour calcul IMC.");
+            tvReco.setText("Taille ou poids invalides pour calcul IMC.");
         }
 
+        // stocker l'IMC calculé dans le champ pour l'envoyer lors du clic
+        bmiToReturn = roundedBmi;
+    }
 
-        float finalBmiToReturn = roundedBmi;
-        btnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("KEY_RETURN_MSG", "Détails reçus avec succès");
-                if (finalBmiToReturn > 0) {
-                    resultIntent.putExtra("RESULT_BMI", finalBmiToReturn);
-                }
-
-                setResult(RESULT_OK, resultIntent);
-                finish(); // ferme Activity5 et déclenche onActivityResult dans Activity4
-            }
-        });
+    // Envoi du résultat au clic
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.btnClose5) {
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("result", bmiToReturn);
+            setResult(Activity.RESULT_OK, resultIntent);
+            finish(); // ferme Activity5 et déclenche onActivityResult dans Activity4
+        }
     }
 }

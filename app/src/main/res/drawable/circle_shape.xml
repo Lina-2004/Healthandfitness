@@ -1,0 +1,14 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <solid android:color="#A0D9D0" /> <!-- vert respiratoire doux -->
+
+    <stroke
+        android:width="3dp"
+        android:color="#76B5A7"/>   <!-- contour soft -->
+
+    <size
+        android:width="180dp"
+        android:height="180dp" />
+
+</shape>

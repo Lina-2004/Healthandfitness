@@ -3,76 +3,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="24dp"
     android:gravity="center_horizontal"
     android:background="#E8F5E9">
 
+    <!-- Titre principal -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="Fitness and Health"
-        android:textColor="#1B5E20"
-        android:textSize="36sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/intro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Reste actif·ve, mange équilibré·e et suis tes progrès chaque jour.\nAtteignons tes objectifs ensemble !"
+        android:text="Santé &amp; Beauté"
         android:textAlignment="center"
-        android:textColor="#2E7D32"
-        android:textSize="18sp" />
+        android:textColor="#80684E"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="309dp"
+        android:layout_height="244dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Logo"
+        android:src="@drawable/logo1" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
+    <!-- Boutons principaux -->
+    <!-- Programmes et conseils -->
     <Button
         android:id="@+id/btnGoAdvice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:backgroundTint="#FF7043"
-        android:text="Programmes et conseils"
+        android:text="Programmes et conseils 📘 "
         android:textAllCaps="false"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#659231"
+        android:layout_marginVertical="6dp"
+        android:padding="12dp"
+        android:layout_marginHorizontal="8dp" />
 
+    <!-- Exercice respiration -->
     <Button
         android:id="@+id/btnGoProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:backgroundTint="#43A047"
-        android:text="Suivi d'exercice"
+        android:text="Exercice respiration 🌬️ "
         android:textAllCaps="false"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2D9C89"
+        android:layout_marginVertical="6dp"
+        android:padding="12dp"
+        android:layout_marginHorizontal="8dp" />
 
-
+    <!-- Saisir mes données -->
     <Button
         android:id="@+id/btnGoInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:backgroundTint="#B19B57"
-        android:text="Saisir mes données"
+        android:text="Saisir mes données 📝 "
         android:textAllCaps="false"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#B19B57"
+        android:layout_marginVertical="6dp"
+        android:padding="12dp"
+        android:layout_marginHorizontal="8dp" />
 
+    <!-- Rappel hydratation -->
+    <Button
+        android:id="@+id/btnHydration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rappel hydratation 💧 "
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#E7B92B"
+        android:layout_marginVertical="6dp"
+        android:padding="12dp"
+        android:layout_marginHorizontal="8dp" />
+
+    <!-- Objectif du jour -->
+    <Button
+        android:id="@+id/btnDailyObjective"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Objectif du jour 🚶‍♂️ "
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#5E9C8C"
+        android:layout_marginVertical="6dp"
+        android:padding="12dp"
+        android:layout_marginHorizontal="8dp" />
+
+
+
+    <!-- Footer -->
     <TextView
         android:id="@+id/footer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="v1.0 • Fitness and Health"
+        android:layout_marginTop="15dp"
+        android:text="v1.0 • Santé &amp; Beauté "
         android:textColor="#4CAF50"
         android:textSize="12sp" />
 
